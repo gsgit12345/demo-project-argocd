@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: firstapp-ui
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gsgit12345/argo-cd-example-application.git
+    targetRevision: release/0.1
+    path: firstapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
