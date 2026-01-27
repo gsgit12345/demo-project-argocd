@@ -17,9 +17,9 @@ spec:
         replicaCount: 4
         service:
           type: NodePort  
-      parameter:
+      parameters:
         - name: replicaCount
-          value:  5    
+          value:  '5'    
   destination:
     server: https://kubernetes.default.svc
     namespace: default
