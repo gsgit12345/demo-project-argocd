@@ -14,9 +14,12 @@ spec:
       valueFiles:
         - custom-value.yaml
       valuesObject:
-        replicacount: 4
+        replicaCount: 4
         service:
-          type: NodePort   
+          type: NodePort  
+      parameter:
+        - name: replicaCount
+          value:  5    
   destination:
     server: https://kubernetes.default.svc
     namespace: default
