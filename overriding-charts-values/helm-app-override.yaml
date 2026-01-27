@@ -12,8 +12,11 @@ spec:
     helm:
       releaseName: helm-firstapp-ui
       valueFiles:
-        - values.yaml
-        - valu-prod.yaml
+        - custom-value.yaml
+      valuesObject:
+        replicacount: 4
+        service:
+          type: NodePort   
   destination:
     server: https://kubernetes.default.svc
     namespace: default
