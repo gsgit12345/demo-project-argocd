@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-firstapp-ui
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gsgit12345/argo-cd-example-application.git
+    targetRevision: release/0.1
+    path: helm-firstapp-ui
+    helm:
+      releaseName: helm-firstapp-ui
+      valueFiles:
+        - values.yaml
+        - valu-prod.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+     automated: 
+        prune: true
+        selfHeal: true 
