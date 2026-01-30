@@ -3,3 +3,8 @@ argocd login localhost:30130 --name local
 argocd context
 
 argocd  account get-user-info
+
+argocd app list
+
+
+iid@master-node:~$ argocd login 192.168.146.50:30130
